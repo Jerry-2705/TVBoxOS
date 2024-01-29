@@ -425,6 +425,7 @@ public class LivePlayActivity extends BaseActivity {
         }else {
             url= epgStringAddress + "?ch="+ URLEncoder.encode(epgTagName) + "&date=" + timeFormat.format(date);
         }
+        Toast.makeText(App.getInstance(), url, Toast.LENGTH_SHORT).show();
         UrlHttpUtil.get(url, new CallBackUtil.CallBackString() {
             public void onFailure(int i, String str) {
                 showEpg(date, new ArrayList());
